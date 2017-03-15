@@ -76,4 +76,33 @@
 	<select id="selectStudentByAllForHashMap" resultType="map">
 		<include refid="selectSql" />
 	</select>
+	
+	<update id="updateSetStudent" parameterType="Student">
+		UPDATE STUDENTS
+		<set>
+			<if test="name!=null">name=#{name},</if>
+			<if test="email!=null">email=#{email},</if>
+			<if test="phone!=null">phone=#{phone},</if>
+			<if test="dob!=null">dob=#{dob},</if>
+		</set>
+		WHERE STUD_ID=#{studId}
+	</update>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

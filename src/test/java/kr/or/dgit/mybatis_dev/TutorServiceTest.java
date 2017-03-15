@@ -26,7 +26,7 @@ public class TutorServiceTest {
 	public static void tearDownAfterClass() throws Exception {
 		tutorService = null;
 	}
-
+/*
 	@Test
 	public void testFindTutorById() {
 		Tutor tutor = tutorService.findTutorById(1);
@@ -38,6 +38,6 @@ public class TutorServiceTest {
 			Assert.assertNotNull(course);
 			System.out.println(course);
 		}
-	}
+	}*/
 
 }

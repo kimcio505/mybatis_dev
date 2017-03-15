@@ -74,7 +74,9 @@ INSERT INTO ADDRESSES (ADDR_ID,STREET,CITY,STATE,ZIP,COUNTRY) VALUES
 
 INSERT INTO STUDENTS (STUD_ID,NAME,EMAIL,PHONE,DOB,BIO,PIC,ADDR_ID) VALUES 
  (1,'Timothy','timothy@gmail.com','123-123-1234','1988-04-25',NULL,NULL,3),
- (2,'Douglas','douglas@gmail.com','789-456-1234','1990-08-15',NULL,NULL,4);
+ (2,'Douglas','douglas@gmail.com','789-456-1234','1990-08-15',NULL,NULL,4),
+ (3,'신진욱','kimcio505@gmail.com','010-5561-2379','1990-04-30',NULL,NULL,3),
+ (4,'김성환','rlatjdghks@gmail.com','010-2131-2322','1990-02-20',NULL,NULL,1);
 
 INSERT INTO TUTORS (TUTOR_ID,NAME,EMAIL,PHONE,DOB,BIO,PIC,ADDR_ID) VALUES 
  (1,'John','john@gmail.com','111-222-3333','1980-05-20',NULL,NULL,1),
@@ -103,3 +105,38 @@ INSERT INTO COURSE_ENROLLMENT (COURSE_ID,STUD_ID) VALUES
  from tutors t left outer join addresses a on t.ADDR_ID=a.ADDR_ID
  	left outer join courses c on T.TUTOR_ID=c.TUTOR_ID
  	where t.TUTOR_ID=1;
+ 	
+ select *
+ from courses
+ where TUTOR_ID = 1 
+ and NAME like '%java%'
+ and START_DATE >='2013-01-01'
+ and END_DATE <='2013-09-01';
+ 
+ 
+ select *
+ from courses
+ where tutor_id = 1 or tutor_id = 2;
+ 
+ select *
+ from courses
+ where TUTOR_ID in (1,2);
+ 
+ 
+ 
+ select * from students;
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -2,6 +2,7 @@ package kr.or.dgit.mybatis_dev.services;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
@@ -64,5 +65,34 @@ public class StudentService {
 			return sqlSession.selectOne(namespace + ".selectStudentByNoWithAddress", student);
 		}
 	}
-
+	public int updateSetStudent(Student student){
+		log.debug("updateSetStudent()");
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		try{
+			StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+			int res = studentMapper.updateSetStudent(student);
+			sqlSession.commit();
+			return res;
+		} catch(Exception e){
+			sqlSession.rollback();
+			e.printStackTrace();
+			throw new RuntimeException(e.getCause());
+		} finally {
+			sqlSession.close();
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

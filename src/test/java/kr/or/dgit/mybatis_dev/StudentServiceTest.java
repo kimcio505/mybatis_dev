@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -17,6 +19,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Student;
 import kr.or.dgit.mybatis_dev.services.StudentService;
 
@@ -45,7 +48,7 @@ public class StudentServiceTest {
 	public void tearDown() {
 		System.out.println("tearDown()");
 	}
-
+/*
 	@Test
 	public void aTestselectStudentByNoForResultMap() {
 		Student student = new Student();
@@ -100,8 +103,27 @@ public class StudentServiceTest {
 
 		Student student1 = studentService.selectStudentByNoAssociationAddress(student);
 		Assert.assertNotNull(student1);
+	}*/
+	@Test
+	public void gTestUpdateSetStudent(){
+		Student student = new Student();
+		student.setStudId(1);
+		student.setEmail("test@test.co.kr");
+		student.setPhone(new PhoneNumber("123-2144-1241"));
+		student.setDob(new Date());
+		
+		int result = studentService.updateSetStudent(student);
+		System.out.printf("testUpdateStudent %s : result %d%n", student, result);
+		Assert.assertSame(1, result);
+		student.setEmail("timothy@gmail.com");
+		student.setPhone(new PhoneNumber("123-4223-2311"));
+		student.setDob(new GregorianCalendar(1988,04,25).getTime());
+		
+		result = studentService.updateSetStudent(student);
+		System.out.printf("testUpdateStudent %s : result %d%n", student, result);
+		Assert.assertSame(1, result);
+		
 	}
-	
 }
 
 
