@@ -22,14 +22,14 @@ public class StudentService {
 	public static StudentService getInstance() {
 		return instance;
 	}
-	public Student selectStudentByNoAssociationAddress(Student student){
+
+	public Student selectStudentByNoAssociationAddress(Student student) {
 		log.debug("selectStudentByNoAssociationAddress()");
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
 			return sqlSession.selectOne(namespace + ".selectStudentByNoAssociationAddress", student);
 		}
 	}
-	
-	
+
 	public Student selectStudentByNoForResultMap(Student student) {
 		log.debug("selectStudentByNoForResultMap()");
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
@@ -61,23 +61,8 @@ public class StudentService {
 	public Student selectStudentByNoWithAddress(Student student) {
 		log.debug("selectStudentByNoWithAddress()");
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			return sqlSession.selectOne(namespace + ".selectStudentByNoWithAddress",student);
+			return sqlSession.selectOne(namespace + ".selectStudentByNoWithAddress", student);
 		}
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
