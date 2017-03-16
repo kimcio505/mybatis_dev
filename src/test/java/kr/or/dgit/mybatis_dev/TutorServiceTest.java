@@ -10,6 +10,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import kr.or.dgit.mybatis_dev.dto.Course;
+import kr.or.dgit.mybatis_dev.dto.Gender;
+import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Tutor;
 import kr.or.dgit.mybatis_dev.services.TutorService;
 
@@ -39,5 +41,11 @@ public class TutorServiceTest {
 			System.out.println(course);
 		}
 	}*/
+	@Test
+	   public void testinsertSetTutor(){
+	      Tutor tutor = new Tutor(7, "설동훈", "sdh@test.co.kr",Gender.FEMALE, new PhoneNumber("010-0000-0000"));
+	      int res =tutorService.insertSetTutor(tutor);
+	      
+	   }
 
 }

@@ -1,8 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 // In this section you declare where to find the dependencies of your project
-repositories {
+tasks.withType(JavaCompile){
+	options.encoding = 'UTF-8'
+}
 
+repositories {
+	
     jcenter()
 }
 

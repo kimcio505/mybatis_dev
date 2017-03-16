@@ -125,12 +125,20 @@ INSERT INTO COURSE_ENROLLMENT (COURSE_ID,STUD_ID) VALUES
  
  
  select * from students;
+ select * from tutors;
  
+ alter table mybatis_dev.students add gender varchar(10) null;
+
+ ALTER TABLE mybatis_dev.tutors ADD gender varchar(10) NULL ;
 
  
- 
- 
- 
+create table USER_PICS(
+	id int(11) not null auto_increment,
+	name varchar(50) default null,
+	pic blob,
+	bio longtext,
+	primary key(id)
+); 
  
  
  

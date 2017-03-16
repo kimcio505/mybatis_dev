@@ -23,7 +23,15 @@ public class StudentService {
 	public static StudentService getInstance() {
 		return instance;
 	}
-
+	public int insertSetStudent(Student student) {
+        log.debug("insertSetStudent()");
+        try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+           int res = sqlSession.getMapper(StudentMapper.class).insertSetStudent(student);
+           sqlSession.commit();
+           return res;
+        }
+     }
+	
 	public Student selectStudentByNoAssociationAddress(Student student) {
 		log.debug("selectStudentByNoAssociationAddress()");
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {

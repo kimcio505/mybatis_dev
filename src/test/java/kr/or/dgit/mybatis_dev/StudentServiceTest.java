@@ -19,6 +19,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import kr.or.dgit.mybatis_dev.dto.Gender;
 import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Student;
 import kr.or.dgit.mybatis_dev.services.StudentService;
@@ -48,6 +49,14 @@ public class StudentServiceTest {
 	public void tearDown() {
 		System.out.println("tearDown()");
 	}
+	/*@Test
+    public void testinsertStudent(){
+       Student std = new Student(5, "홍길동", "hgd@test.co.kr",new Date(),new PhoneNumber("010-5555-5555"));
+       std.setGender(Gender.FEMALE);
+       int res  = studentService.insertSetStudent(std);
+       Assert.assertEquals(1, res);
+    }*/
+	
 /*
 	@Test
 	public void aTestselectStudentByNoForResultMap() {
@@ -103,7 +112,7 @@ public class StudentServiceTest {
 
 		Student student1 = studentService.selectStudentByNoAssociationAddress(student);
 		Assert.assertNotNull(student1);
-	}*/
+	}
 	@Test
 	public void gTestUpdateSetStudent(){
 		Student student = new Student();
@@ -123,7 +132,7 @@ public class StudentServiceTest {
 		System.out.printf("testUpdateStudent %s : result %d%n", student, result);
 		Assert.assertSame(1, result);
 		
-	}
+	}*/
 }
 
 

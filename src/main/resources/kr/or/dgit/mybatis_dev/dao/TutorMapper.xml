@@ -16,5 +16,9 @@
 		left outer join courses c on T.TUTOR_ID=c.TUTOR_ID
 		where t.TUTOR_ID=#{tutorId};
 	</select>
-
+	
+	<insert id="insertSetTutor" parameterType="Tutor">
+      insert into tutors (tutor_id, name, email, phone,gender)
+      values(#{tutorId}, #{name},#{email},#{phone},#{gender})
+   </insert>
 </mapper>

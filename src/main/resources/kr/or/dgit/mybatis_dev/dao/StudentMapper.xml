@@ -14,7 +14,7 @@
 		</where>
 	</sql>
 
-
+	
 	<resultMap type="Student" id="StudentResult">
 		<id property="studId" column="stud_id" />
 		<result property="name" column="name" />
@@ -87,7 +87,11 @@
 		</set>
 		WHERE STUD_ID=#{studId}
 	</update>
-	
+	<insert id="insertSetStudent" parameterType="Student">
+      insert into students (stud_id, name, email, phone, dob, gender)
+      values(#{studId},#{name},#{email},#{phone},#{dob},#{gender})
+   </insert>
+   
 </mapper>
 
 
