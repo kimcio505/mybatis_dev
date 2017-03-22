@@ -28,8 +28,8 @@ public class TutorServiceTest {
 	public static void tearDownAfterClass() throws Exception {
 		tutorService = null;
 	}
-/*
-	@Test
+
+/*	@Test
 	public void testFindTutorById() {
 		Tutor tutor = tutorService.findTutorById(1);
 		Assert.assertNotNull(tutor);
@@ -40,12 +40,11 @@ public class TutorServiceTest {
 			Assert.assertNotNull(course);
 			System.out.println(course);
 		}
-	}*/
+	}
 	@Test
 	   public void testinsertSetTutor(){
-	      Tutor tutor = new Tutor(7, "설동훈", "sdh@test.co.kr",Gender.FEMALE, new PhoneNumber("010-0000-0000"));
+	      Tutor tutor = new Tutor(8, "설동훈", "sdh@test.co.kr",Gender.FEMALE, new PhoneNumber("010-0000-0000"));
 	      int res =tutorService.insertSetTutor(tutor);
-	      
 	   }
-
+*/
 }
